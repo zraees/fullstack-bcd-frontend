@@ -20,11 +20,11 @@ describe("test look and feel", () => {
 });
 
 describe("test functionality", () => {
-  let renderResult;
+  //let renderResult;
 
   beforeAll(() => {
     userEvent.setup();
-    renderResult = render(<RouterProvider router={router} />);
+    //renderResult = render(<RouterProvider router={router} />);
   });
 
   test("checking click event from search button", async () => {
@@ -38,7 +38,7 @@ describe("test functionality", () => {
   test("checking zip-code textbox", async ()=>{
     
     userEvent.setup();
-    renderResult = render(<RouterProvider router={router} />);
+    //renderResult = render(<RouterProvider router={router} />);
 
     const input = screen.getByTestId("zip-code")
     expect(input).toBeInTheDocument();

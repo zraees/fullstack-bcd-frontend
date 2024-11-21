@@ -7,7 +7,7 @@
   },
 
   // also include the file we just created:
-  "include": ["src", "./src/test/setup.ts"],
+  //"include": ["src", "./src/test/setup.ts"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

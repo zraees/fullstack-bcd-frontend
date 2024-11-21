@@ -1,12 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
+import { ThemeContextType } from "../types/types";
 
-export const ThemeContext = createContext("");
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }) {
-  const [isDarkTheme, setIsDark] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [isDarkTheme, setIsDark] = useState(JSON.parse(localStorage.getItem("isDarkTheme")??"false"));
 
-  const toggleTheme = (isDark) => {
-    localStorage.setItem("isDarkTheme", isDark);
+  const toggleTheme = (isDark : boolean) => {
+    localStorage.setItem("isDarkTheme", JSON.stringify(isDark));
     setIsDark(isDark);
   };
 
@@ -16,3 +17,4 @@ export function ThemeProvider({ children }) {
     </ThemeContext.Provider>
   );
 }
+

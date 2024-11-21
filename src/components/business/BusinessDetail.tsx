@@ -25,7 +25,7 @@ const BusinessDetail = () => {
         <div className="col-lg-6">
           <Tabs
             activeKey={key}
-            onSelect={(k) => setKey(k)}
+            onSelect={(k:any) => setKey(k)}
             id="controlled-tab-example"
           >
             <Tab eventKey="tabOverview" title="Overview">

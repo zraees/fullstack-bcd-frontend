@@ -13,7 +13,7 @@ const BusinessReviews: React.FC<IBusinessReviewsProp> = ({ businessReviews }) =>
       </div>
       
       {businessReviews.map((review, index)=>{
-        return <h4>{review.comment}</h4>
+        return <h4 key={index}>{review.comment}</h4>
       })}
       
     </div>

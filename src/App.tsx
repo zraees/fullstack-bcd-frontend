@@ -3,12 +3,10 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
-import { ThemeContext } from "./contexts/ThemeContext";
-import { useContext } from "react";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
-  const { isDarkTheme } = useContext(ThemeContext);
-  //console.log('isDark', isDark);
+  const { isDarkTheme } = useTheme();
   return (
     <div data-bs-theme={isDarkTheme ? "dark" : "light"} className={isDarkTheme ? "bg-dark text-white" : "bg-light text-dark"}>
       <Header></Header>

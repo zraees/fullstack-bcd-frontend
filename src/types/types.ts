@@ -71,3 +71,9 @@ export interface IBusinessOverviewProp {
 export interface IBusinessReviewsProp {
   businessReviews: IBusinessReview[];
 }
+
+// Define the shape of the context
+export interface ThemeContextType {
+  isDarkTheme: boolean;
+  toggleTheme: (isDark: boolean) => void; // Specify a more precise type
+}

@@ -1,12 +1,11 @@
-import { useContext, useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
 import { NavLink } from "react-router-dom";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 import UserNav from "./user/UserNav";
+import { useTheme } from "../hooks/useTheme";
 
 const Header = () => {
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
-
+  const { isDarkTheme, toggleTheme } = useTheme();
+// const contextTypr : ThemeContextType  = useContext(ThemeContext);
   return (
     <header className="p-3 mb-3 border-bottom">
       <div className="container">
