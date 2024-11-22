@@ -26,6 +26,11 @@ h1, h2, h3, h4 {
   text-decoration: none !important;
 }
 
+.form-floating {
+  position: relative;
+  padding-bottom: 10px;
+}
+
 /* .bg-dark h1,
 .bg-dark a {
     color: white !important; 

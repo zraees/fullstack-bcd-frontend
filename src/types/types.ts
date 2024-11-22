@@ -47,6 +47,10 @@ export interface IBusinessReview {
 
 export interface IUser {
   userId: number;
+  username: string;
+  email: string;
+  userTypeId: number;
+  token: string;
 }
 
 export interface IBusinessCardMapProps {
@@ -75,5 +79,16 @@ export interface IBusinessReviewsProp {
 // Define the shape of the context
 export interface ThemeContextType {
   isDarkTheme: boolean;
-  toggleTheme: (isDark: boolean) => void; // Specify a more precise type
+  toggleTheme: (isDark: boolean) => void;
+}
+
+export interface ThemeContextType {
+  isDarkTheme: boolean;
+  toggleTheme: (isDark: boolean) => void;
+}
+
+export interface AuthContextType {
+  user: any;
+  login: (user: any) => void;
+  logout: () => void;
 }

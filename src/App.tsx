@@ -8,10 +8,15 @@ import { useTheme } from "./hooks/useTheme";
 function App() {
   const { isDarkTheme } = useTheme();
   return (
-    <div data-bs-theme={isDarkTheme ? "dark" : "light"} className={isDarkTheme ? "bg-dark text-white" : "bg-light text-dark"}>
-      <Header></Header>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div
+      data-bs-theme={isDarkTheme ? "dark" : "light"}
+      className={isDarkTheme ? "bg-dark text-white" : "bg-light text-dark"}
+    >
+      {/* <AuthProvider> */}
+        <Header></Header>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      {/* </AuthProvider> */}
     </div>
   );
 }
