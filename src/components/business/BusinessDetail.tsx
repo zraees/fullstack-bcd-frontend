@@ -4,7 +4,7 @@ import CustomCarousel from "../shared/CustomCarousel";
 import BusinessOverview from "./BusinessOverview";
 import { Tab, Tabs } from "react-bootstrap";
 import { useState } from "react";
-import BusinessReviews from "./BusinessReviews";
+import BusinessReviews from "./reviews/BusinessReviews";
 
 const BusinessDetail = () => {
   const location = useLocation();
@@ -32,7 +32,7 @@ const BusinessDetail = () => {
               <BusinessOverview business={business}></BusinessOverview>
             </Tab>
             <Tab eventKey="tabReviews" title="Reviews">
-              <BusinessReviews businessReviews={business.businessReviews}></BusinessReviews>
+              <BusinessReviews businessId={business.businessId} businessReviews={business.businessReviews}></BusinessReviews>
             </Tab>
           </Tabs>
         </div>

@@ -73,6 +73,7 @@ export interface IBusinessOverviewProp {
 }
 
 export interface IBusinessReviewsProp {
+  businessId: number;
   businessReviews: IBusinessReview[];
 }
 
@@ -91,4 +92,14 @@ export interface AuthContextType {
   user: any;
   login: (user: any) => void;
   logout: () => void;
+}
+
+export interface IStarRatingProps {
+  rating: number;
+  onRatingChange: (rating: number) => void;
+}
+
+export interface IBusinessAddReviewProps {
+  businessId: number;
+  userId: number;
 }

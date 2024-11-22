@@ -9,9 +9,7 @@ const UserService = {
     },
 
     register: async (username: string, email: string, password: string): Promise<any> => {
-        console.log('data', username, email, password)
         const resp = await axios.post(`${backendUrl}/register?username=${username}&email=${email}&pwd=${password}`);
-console.log('resp.data', resp.data);
         return resp.data;
     },
     

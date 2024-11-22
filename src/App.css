@@ -31,6 +31,21 @@ h1, h2, h3, h4 {
   padding-bottom: 10px;
 }
 
+.star-rating {
+  display: flex;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 2rem; /* Adjust size as needed */
+  color: gray; /* Default star color */
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: gold; /* Color for filled stars */
+}
+
 /* .bg-dark h1,
 .bg-dark a {
     color: white !important; 

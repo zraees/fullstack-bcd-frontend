@@ -18,7 +18,8 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: any) => {
-    //console.log("Form Data:", data);
+    setLoading(true);
+    setError(null);
     try {
       const response = await UserService.register(
         data.username,
