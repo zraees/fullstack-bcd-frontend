@@ -20,8 +20,8 @@ export const LoginPage = () => {
     try {
       const response = await UserService.authenticate(email, password);
       // Handle successful sign-in (e.g., save token, redirect)
-      console.log("Sign-in successful:", response);
-      await login(response.username);
+      //console.log("Sign-in successful:", response);
+      await login(response);
     } catch (err: any) {
       setError(err.response ? err.response.data.message : "An error occurred");
       alert("Invalid email or password");

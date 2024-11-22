@@ -24,7 +24,7 @@ const UserNav = () => {
           width="32"
           height="32"
           className="rounded-circle"
-        />&nbsp; {user}
+        />&nbsp; {user?.username}
       </a>
       <ul className={menuClass}>
         {user == null ? (

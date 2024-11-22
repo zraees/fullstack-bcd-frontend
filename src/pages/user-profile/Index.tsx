@@ -9,7 +9,7 @@ export const Index = () => {
 
   return (
     <div>
-      <h1>This is a Secret page  User: {user}</h1>
+      <h1>This is a Secret page  User: {user?.username}</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

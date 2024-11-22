@@ -25,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
 
   // call this function when you want to authenticate the user
-  const login = async (data: any) => {
+  const login = async (data: IUser) => {
     localStorage.setItem("user", JSON.stringify(data));
     setUser(data);
     navigate("/auth/user-profile");

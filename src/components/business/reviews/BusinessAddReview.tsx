@@ -30,7 +30,7 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
         rating,
         comment
       );
-      console.log("review submitted successful:", response);
+      //console.log("review submitted successful:", response);
     } catch (err: any) {
       setError(err.response ? err.response.data.message : "An error occurred");
       alert("Something went wrong !");

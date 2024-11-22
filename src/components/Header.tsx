@@ -2,11 +2,9 @@ import { NavLink } from "react-router-dom";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 import UserNav from "./user/UserNav";
 import { useTheme } from "../hooks/useTheme";
-import { useAuth } from "../hooks/useAuth";
 
 const Header = () => {
   const { isDarkTheme, toggleTheme } = useTheme();
-  const { user } = useAuth();
   // const contextTypr : ThemeContextType  = useContext(ThemeContext);
   return (
     <header className="p-3 mb-3 border-bottom">
