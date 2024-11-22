@@ -49,37 +49,9 @@ const Header = () => {
                 About Us
               </NavLink>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
           </ul>
 
-          <form
+          {/* <form
             className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
             role="search"
           >
@@ -89,7 +61,7 @@ const Header = () => {
               placeholder="Search..."
               aria-label="Search"
             />
-          </form>
+          </form> */}
 
           <UserNav></UserNav>
 

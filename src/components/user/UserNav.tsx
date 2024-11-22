@@ -19,12 +19,12 @@ const UserNav = () => {
         aria-expanded="false"
       >
         <img
-          src="images/loggedIn.jpg"
-          alt="mdo"
+          src={user == null ? "/images/no-user.jpg" : "/images/yes-user.webp"}
+          alt=""
           width="32"
           height="32"
           className="rounded-circle"
-        />
+        />&nbsp; {user}
       </a>
       <ul className={menuClass}>
         {user == null ? (
