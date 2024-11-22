@@ -15,6 +15,7 @@ import { AuthLayout } from "./components/auth/AuthLayout";
 import { LoginPage } from "./components/auth/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 import LogoutPage from "./components/auth/Logout";
+import SignUpPage from "./components/auth/Signup";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
           { path: "/", element: <Home /> },
           { path: "/login", element: <LoginPage /> },
           { path: "/logout", element: <LogoutPage /> },
+          { path: "/signup", element: <SignUpPage /> },
           { path: "businesses", element: <Businesses /> },
           { path: "business-detail/:id", element: <BusinessDetail /> },
           { path: "services", element: <Services /> },

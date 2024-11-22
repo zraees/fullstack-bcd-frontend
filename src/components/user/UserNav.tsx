@@ -7,7 +7,7 @@ const UserNav = () => {
   const { user } = useAuth();
 
   const toggleOpen = () => setIsOpen(!isOpen);
-  console.log("user", user);
+  
   const menuClass = `dropdown-menu${isOpen ? " show" : ""}  text-small`;
 
   return (
