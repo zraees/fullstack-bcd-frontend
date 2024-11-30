@@ -1,7 +1,7 @@
 import { useState } from "react";
 import StarRating from "../../shared/StarRating";
 import { IBusinessAddReviewProps } from "../../../types/types";
-import BusinessService from "../../../services/business-service";
+import BusinessReviewsService from "../../../services/business-reviews-service";
 
 const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
   businessId,
@@ -15,7 +15,6 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
 
     // Validate rating and comment
     if (rating <= 0 || comment.trim() === "") {
@@ -24,7 +23,8 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
     }
 
     try {
-      const response = await BusinessService.addReview(
+      setLoading(true);
+      const response = await BusinessReviewsService.addReview(
         businessId,
         userId,
         rating,

@@ -5,7 +5,7 @@ const CustomCarousel: React.FC<IBusinessPhotoProp> = ({ businessPhotos }) => {
   //console.log("businessPhotos", businessPhotos);
   return (
     <Carousel>
-      {businessPhotos.length > 0 ? businessPhotos.map((photo, index) => {
+      {businessPhotos?.length > 0 ? businessPhotos?.map((photo, index) => {
         return (
           <Carousel.Item key={index}>
             <img src={`/images/business/${photo.url}`} className="business-img-rounded" />

@@ -112,6 +112,10 @@ ul.categories>li.categories a.cateoryLink span {
   min-width: 610px;
 }
 
+.badge-star {
+  height: 22px;
+}
+
 /* Mobile screens (width <= 767px) */
 @media (max-width: 767px) {
   .map-container {
