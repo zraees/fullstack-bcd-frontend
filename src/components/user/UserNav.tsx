@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
+import CustomNav from "./CustomNav";
 
 const UserNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,29 +28,7 @@ const UserNav = () => {
         />&nbsp; {user?.username}
       </a>
       <ul className={menuClass}>
-        {user == null ? (
-          <li>
-            <NavLink to="/login" className="nav-link px-2">
-              Sign In
-            </NavLink>
-          </li>
-        ) : (
-          <>
-            <li>
-              <NavLink to="auth/user-profile" className="nav-link px-2">
-                Profile
-              </NavLink>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <NavLink to="/logout" className="nav-link px-2">
-                Sign out
-              </NavLink>
-            </li>
-          </>
-        )}
+        <CustomNav />
       </ul>
     </div>
   );

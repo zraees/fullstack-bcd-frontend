@@ -1,16 +1,5 @@
-import { useAuth } from "../../hooks/useAuth";
+import UserReviews from "../../components/user/UserReviews";
 
 export const Index = () => {
-  const { user, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-  };
-
-  return (
-    <div>
-      <h1>This is a Secret page  User: {user?.username}</h1>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
-  );
+  return <UserReviews />;
 };

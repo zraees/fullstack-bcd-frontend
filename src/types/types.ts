@@ -43,6 +43,7 @@ export interface IBusinessReview {
   comment: string;
   createdAt: Date;
   user: IUser;
+  business: IBusiness;
 }
 
 export interface IUser {
