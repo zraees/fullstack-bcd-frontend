@@ -17,6 +17,8 @@ import { LoginPage } from "./components/auth/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 import LogoutPage from "./components/auth/Logout";
 import SignUpPage from "./components/auth/Signup";
+import List from "./pages/businesses/List";
+import Create from "./pages/businesses/Create";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,22 @@ const router = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 <AllReviews />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: "/auth/add-business",
+            element: (
+              <ProtectedRoute>
+                <Create />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: "/auth/list-business",
+            element: (
+              <ProtectedRoute>
+                <List />
               </ProtectedRoute>
             ),
           },

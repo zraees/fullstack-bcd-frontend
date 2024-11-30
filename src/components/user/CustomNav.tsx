@@ -27,8 +27,11 @@ const CustomNav = () => {
               <NavLink to="auth/all-reviews" className="nav-link px-2">
                 All Reviews
               </NavLink>
-              <NavLink to="auth/user-profile" className="nav-link px-2">
-                Manage Business
+              <NavLink to="auth/add-business" className="nav-link px-2">
+                Add Business
+              </NavLink>
+              <NavLink to="auth/list-business" className="nav-link px-2">
+                List Business
               </NavLink>
             </li>}
 

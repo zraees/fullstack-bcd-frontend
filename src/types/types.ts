@@ -111,3 +111,13 @@ export interface IToastProps {
   title: string, 
   message: string
 }
+
+export interface ICityProp {
+    value: number,
+    onChange: (e: number) => void;
+}
+
+export interface ICategoryProp {
+  value: number,
+  onChange: (e: number) => void;
+}
