@@ -1,8 +1,8 @@
 const Footer = () => {
     return <div className="container">
-    <footer className="py-5">
-    <hr/>
-      <div className="row">
+    <footer>
+      {/*<hr/>
+     <div className="row">
         <div className="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul className="nav flex-column">
@@ -48,9 +48,9 @@ const Footer = () => {
           </form>
         </div>
       </div>
-  
+   */}
       <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>© 2024 Company, Inc. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} BCD, Inc. All rights reserved.</p>
         <ul className="list-unstyled d-flex">
           <li className="ms-3"><a className="link-body-emphasis" href="#"><svg className="bi" width="24" height="24"><use xlinkHref="#twitter"></use></svg></a></li>
           <li className="ms-3"><a className="link-body-emphasis" href="#"><svg className="bi" width="24" height="24"><use xlinkHref="#instagram"></use></svg></a></li>

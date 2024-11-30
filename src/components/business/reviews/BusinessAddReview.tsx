@@ -2,6 +2,7 @@ import { useState } from "react";
 import StarRating from "../../shared/StarRating";
 import { IBusinessAddReviewProps } from "../../../types/types";
 import BusinessReviewsService from "../../../services/business-reviews-service";
+import CustomToast from "../../shared/CustomToast";
 
 const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
   businessId,
@@ -11,6 +12,7 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -23,18 +25,23 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
     }
 
     try {
+
       setLoading(true);
+      
       const response = await BusinessReviewsService.addReview(
         businessId,
         userId,
         rating,
         comment
       );
-      //console.log("review submitted successful:", response);
-    } catch (err: any) {
+
+      setShowToast(true);
+    } 
+    catch (err: any) {
       setError(err.response ? err.response.data.message : "An error occurred");
       alert("Something went wrong !");
-    } finally {
+    } 
+    finally {
       setLoading(false);
     }
 
@@ -79,6 +86,12 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
 
         {error && <div className="alert alert-danger">{error}</div>}
       </form>
+      <CustomToast
+          show={showToast}
+          title="Success"
+          onClose={() => setShowToast(false)}
+          message="Review has been successfully saved!"
+        />
     </div>
   );
 };

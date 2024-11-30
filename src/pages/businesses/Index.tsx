@@ -4,6 +4,7 @@ import BusinessService from "../../services/business-service";
 import BusinessCard from "../../components/business/BusinessCard";
 import { IBusiness } from "../../types/types";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/shared/Loading";
 
 export const Index = () => {
   const INITIAL: IBusiness[] = [];
@@ -34,7 +35,7 @@ export const Index = () => {
     <main className="business-bg">
       <SearchCriteria />
 
-      {businessData?.length <= 0 && <h2 className="text text-info">No data available !</h2>}
+      {businessData?.length <= 0 && <Loading />}
 
       {businessData?.length > 0 && (
         <div className="album py-5 bg-body-tertiary">

@@ -103,3 +103,10 @@ export interface IBusinessAddReviewProps {
   businessId: number;
   userId: number;
 }
+
+export interface IToastProps {
+  show: boolean, 
+  onClose: () => void,
+  title: string, 
+  message: string
+}

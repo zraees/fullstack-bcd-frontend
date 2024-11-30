@@ -8,7 +8,7 @@ const BusinessReviewsService = {
         userId: number,
         rating: number,
         comment: string): Promise<any> => {
-            console.log('businessId, userId, rating, comment',businessId, userId, rating, comment);
+        //console.log('businessId, userId, rating, comment',businessId, userId, rating, comment);
         const resp = await axios.post(`${backendUrl}/addReview`, { businessId, userId, rating, comment });
         return resp.data;
     },

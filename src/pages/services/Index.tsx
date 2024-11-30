@@ -5,11 +5,11 @@ export const Index = () => {
           <div className="container-fluid py-5">
             <h1 className="display-5 fw-bold">Our Services</h1>
             <p className="col-md-8 fs-4">At Business Community Directory (BCD), we connect you with local businesses. Explore comprehensive listings, read genuine reviews, and find top-rated services in your area. Whether you’re seeking dining, shopping, or entertainment, BCD is your go-to platform for discovering the best local experiences.</p>
-            <button className="btn btn-primary btn-lg" type="button">Example button</button>
+            {/* <button className="btn btn-primary btn-lg" type="button">Example button</button> */}
           </div>
         </div>
     
-        <div className="row align-items-md-stretch">
+        {/* <div className="row align-items-md-stretch">
           <div className="col-md-6">
             <div className="h-100 p-5 text-bg-dark rounded-3">
               <h2>Change the background</h2>
@@ -24,6 +24,6 @@ export const Index = () => {
               <button className="btn btn-outline-secondary" type="button">Example button</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>);
 }

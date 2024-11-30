@@ -27,17 +27,13 @@ const BusinessDetail = () => {
 
   const loadReviews = async () => {
     try {
-      //const response = await fetch(`/api/get-reviews?bId=${bId}`); // Replace with your API endpoint
       const response: IBusinessReview[] = await BusinessReviewsService.getReviewsByBusinessId(business?.businessId??0);
-      //const data = await response.json();
-      console.log('reviews', response);
       setReviews(response);
     } catch (error) {
       console.error("Error loading reviews:", error);
     }
   };
 
-  //console.log('business.latitude', business.latitude, business.longitude)
   return (
     <div className="container ">
       <h1 className="display-6">Business Details</h1>
