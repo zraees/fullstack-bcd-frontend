@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import { NavLink } from "react-router-dom";
 import CustomNav from "./CustomNav";
 
 const UserNav = () => {

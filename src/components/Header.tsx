@@ -37,11 +37,11 @@ const Header = () => {
                 Find a Business
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="services" className="nav-link px-2">
                 Services
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink to="about-us" className="nav-link px-2">
                 About Us

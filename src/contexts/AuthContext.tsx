@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (data: IUser) => {
     localStorage.setItem("user", JSON.stringify(data));
     setUser(data);
-    navigate("/auth/user-profile");
+    navigate("/businesses");
   };
 
   // call this function to sign out logged in user

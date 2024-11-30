@@ -7,7 +7,8 @@ import { Index as Home } from "./pages/home/Index";
 import { Index as Services } from "./pages/services/Index";
 import { Index as Businesses } from "./pages/businesses/Index";
 import { Index as AboutUs } from "./pages/about-us/Index";
-import { Index as UserProfile } from "./pages/user-profile";
+import { Index as MyReviews } from "./pages/my-reviews/Index";
+import { Index as AllReviews } from "./pages/all-reviews/Index";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import BusinessDetail from "./components/business/BusinessDetail";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
@@ -39,10 +40,18 @@ const router = createBrowserRouter([
           { path: "services", element: <Services /> },
           { path: "about-us", element: <AboutUs /> },
           {
-            path: "/auth/user-profile",
+            path: "/auth/my-reviews",
             element: (
               <ProtectedRoute>
-                <UserProfile />
+                <MyReviews />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: "/auth/all-reviews",
+            element: (
+              <ProtectedRoute>
+                <AllReviews />
               </ProtectedRoute>
             ),
           },

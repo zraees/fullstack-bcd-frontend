@@ -17,14 +17,14 @@ const CustomNav = () => {
           <>
             {(user?.userTypeId??2) == 2 && 
             <li>
-              <NavLink to="auth/user-profile" className="nav-link px-2">
+              <NavLink to="auth/my-reviews" className="nav-link px-2">
                 My Reviews
               </NavLink>
             </li>}
 
             {(user?.userTypeId??2) == 1 && 
             <li>
-              <NavLink to="auth/user-profile" className="nav-link px-2">
+              <NavLink to="auth/all-reviews" className="nav-link px-2">
                 All Reviews
               </NavLink>
               <NavLink to="auth/user-profile" className="nav-link px-2">

@@ -25,6 +25,12 @@ const BusinessReviewsService = {
         return resp.data;
     },
 
+    getAllReviewsAsync: async (): Promise<IBusinessReview[]> => {
+        const resp = await axios.get<IBusinessReview[]>(`${backendUrl}/GetAllReviewsAsync`);
+        //console.log('url', `${backendUrl}Businesses/GetFeatureBusinesses`)
+        return resp.data;
+    },
+
 }
 
 export default BusinessReviewsService;
