@@ -14,7 +14,13 @@ const Header = () => {
             href="/"
             className="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
           >
-            <svg
+            <img className="bi me-2"
+              width="40"
+              height="32"
+              role="img"
+              src="/images/logo-1.jpg"
+              aria-label="Bootstrap"></img>
+            {/* <svg
               className="bi me-2"
               width="40"
               height="32"
@@ -22,7 +28,7 @@ const Header = () => {
               aria-label="Bootstrap"
             >
               <use xlinkHref="#bootstrap"></use>
-            </svg>
+            </svg> */}
           </a>
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

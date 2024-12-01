@@ -31,7 +31,7 @@ const List = () => {
     if (!confirmDelete) return;
 
     BusinessService.markAsFeatured(businessId)
-      .then((e) => {
+      .then(() => {
         setShowToast(true);
         fetchData();
       })
@@ -45,7 +45,7 @@ const List = () => {
     if (!confirmDelete) return;
 
     BusinessService.deleteBusiness(businessId)
-      .then((e) => {
+      .then(() => {
         setShowToast(true);
         fetchData();
       })

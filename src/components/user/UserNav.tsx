@@ -13,7 +13,6 @@ const UserNav = () => {
   return (
     <div className="dropdown text-end" onClick={() => toggleOpen()}>
       <a
-        href="#"
         className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-expanded="false"

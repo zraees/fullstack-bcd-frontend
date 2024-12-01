@@ -7,7 +7,7 @@ import { act } from "react";
 const router = createMemoryRouter([
   {
     path: "/",
-    element: <SearchCriteria />,
+    element: <SearchCriteria onSearch={()=>{}} />,
   },
 ]);
 

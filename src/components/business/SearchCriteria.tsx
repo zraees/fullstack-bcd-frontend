@@ -4,7 +4,7 @@ import { useState } from "react";
 import CategoryDropdown from "../category/CategoryDropdown";
 import CityDropdown from "../city/CityDropdown";
 
-const SearchCriteria = ({onSearch}) => {
+const SearchCriteria: React.FC<any> = ({onSearch}) => {
 
   const [searchData, setSearchData] = useState({
     categoryId: 0,

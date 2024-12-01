@@ -37,6 +37,11 @@ const BusinessService = {
         return resp.data;
     },
 
+    getRecommendations: async (userId: number): Promise<IBusiness[]> => {
+        const resp = await axios.get<IBusiness[]>(`${backendUrl}/GetRecommendations/${userId}`);
+        return resp.data;
+    },
+
     getFeatureBusinesses: async (): Promise<IBusiness[]> => {
         const resp = await axios.get<IBusiness[]>(`${backendUrl}/GetFeatureBusinesses`);
         //console.log('url', `${backendUrl}Businesses/GetFeatureBusinesses`)

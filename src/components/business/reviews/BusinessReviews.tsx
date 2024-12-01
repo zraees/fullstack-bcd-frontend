@@ -1,7 +1,7 @@
 import { IBusinessReviewsProp } from "../../../types/types";
 import Loading from "../../shared/Loading";
 
-const BusinessReviews: React.FC<IBusinessReviewsProp> = ({ businessId, businessReviews }) => {
+const BusinessReviews: React.FC<IBusinessReviewsProp> = ({ businessReviews }) => {
 
   return (
     <div className="g-1 py-2">

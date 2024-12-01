@@ -6,7 +6,7 @@ const Hero = () => {
     return <div className="container col-xxl-8">  
     <div className="row flex-lg-row-reverse align-items-center">
       <div className="col-10 col-sm-8 col-lg-6">
-        <img src="/images/business-2.png" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+        <img src="/images/business-3.png" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
       </div>
       <div className="col-lg-6">
         <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Discover Local, Support Local</h1>

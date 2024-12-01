@@ -25,7 +25,7 @@ const CityDropdown: React.FC<ICityProp> = ({ value, onChange }) => {
       <select
         className="form-select"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(Number(e.target.value))}
         id="cityID"
         required
       >

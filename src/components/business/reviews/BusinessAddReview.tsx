@@ -28,7 +28,7 @@ const BusinessAddReview: React.FC<IBusinessAddReviewProps> = ({
 
       setLoading(true);
       
-      const response = await BusinessReviewsService.addReview(
+      await BusinessReviewsService.addReview(
         businessId,
         userId,
         rating,

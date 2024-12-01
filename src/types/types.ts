@@ -18,6 +18,7 @@ export interface IBusiness {
   businessReviews: IBusinessReview[];
 
   images: any[]; // post
+  
 }
 
 export interface ICity {

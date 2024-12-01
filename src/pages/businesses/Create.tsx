@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import CityDropdown from "../../components/city/CityDropdown";
 import CategoryDropdown from "../../components/category/CategoryDropdown";
@@ -26,7 +25,7 @@ const Create = () => {
   const [loading, setLoading] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setBusinessData({
       ...businessData,
@@ -34,24 +33,25 @@ const Create = () => {
     });
   };
 
-  const handleCityChange = (cityID) => {
+  const handleCityChange = (cityID: number) => {
     setBusinessData({ ...businessData, cityID });
   };
 
-  const handleCategoryChange = (categoryId) => {
+  const handleCategoryChange = (categoryId: number) => {
     setBusinessData({ ...businessData, categoryId });
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: any) => {
     setImages(e.target.files);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : any) => {
     e.preventDefault();
     setLoading(true);
     try {
       const formData = new FormData();
       Object.keys(businessData).forEach((key) =>
+        // @ts-ignore
         formData.append(key, businessData[key])
       );
       Array.from(images).forEach((file) => formData.append("images", file));
@@ -59,7 +59,7 @@ const Create = () => {
       //console.log("data", formData);
 
       BusinessService.add(formData)
-        .then((e) => {
+        .then(() => {
           setShowToast(true);
 
           setBusinessData({

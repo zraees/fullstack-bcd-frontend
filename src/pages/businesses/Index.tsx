@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import SearchCriteria from "../../components/business/SearchCriteria";
 import BusinessService from "../../services/business-service";
 import BusinessCard from "../../components/business/BusinessCard";
-import { IBusiness } from "../../types/types";
-import { useNavigate } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
 import Loading from "../../components/shared/Loading";
+import { IBusiness } from "../../types/types";
 
 export const Index = () => {
   const INITIAL: IBusiness[] = [];
@@ -45,7 +45,7 @@ export const Index = () => {
 
   return (
     <main className="business-bg">
-      <SearchCriteria onSearch={(text, cityId, categoryId)=> handleSearch(text, cityId, categoryId)} />
+      <SearchCriteria onSearch={(text: string, cityId: number, categoryId: number)=> handleSearch(text, cityId, categoryId)} />
 
       {businessData?.length <= 0 && <Loading />}
 

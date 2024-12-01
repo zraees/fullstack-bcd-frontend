@@ -3,16 +3,18 @@ import { IBusiness } from "../../types/types";
 import BusinessCard from "./BusinessCard";
 import { useNavigate } from "react-router-dom";
 import BusinessService from "../../services/business-service";
+import { useAuth } from "../../hooks/useAuth";
 
 const Feature = () => {
   const INITIAL: IBusiness[] = [];
   const [businessData, setBusinessData] = useState(INITIAL);
   const navigate = useNavigate();
+  const {user} = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res: IBusiness[] = await BusinessService.getFeatureBusinesses();
+        const res: IBusiness[] = await BusinessService.getRecommendations(user?.userId??0);
         //console.log('res', res);
         setBusinessData(Array.isArray(res) ? res : INITIAL);
         //console.log('data',res);
@@ -35,6 +37,7 @@ const Feature = () => {
       {businessData?.length > 0 && (
         <div className="album py-5 bg-body-tertiary">
           <div className="container">
+            <h5>Recommendated | Featured Businesses </h5>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {businessData?.map((business: IBusiness) => (
                 <div key={business.businessId} className="col">

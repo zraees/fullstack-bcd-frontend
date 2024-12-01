@@ -24,8 +24,8 @@ const AllReviews = () => {
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h3>All Reviews</h3>
+    <div className="container">
+      <h3>All Reviews ({userReviewsData?.length})</h3> 
               
       {userReviewsData?.length <= 0 && <Loading />}
 

@@ -27,7 +27,7 @@ const SignUp = () => {
         data.password
       );
 
-      await login(response.username);
+      await login(response);
     } catch (err: any) {
       setError(err.response ? err.response.data.message : "An error occurred");
       alert("invalid user information");
@@ -70,7 +70,7 @@ const SignUp = () => {
             Username
           </label>
           {errors.username && (
-            <div className="invalid-feedback">{errors.username.message}</div>
+            <div className="invalid-feedback">Invalid</div>
           )}
         </div>
 
@@ -91,7 +91,7 @@ const SignUp = () => {
             Email
           </label>
           {errors.email && (
-            <div className="invalid-feedback">{errors.email.message}</div>
+            <div className="invalid-feedback">Invalid</div>
           )}
         </div>
 
@@ -112,7 +112,7 @@ const SignUp = () => {
             Password
           </label>
           {errors.password && (
-            <div className="invalid-feedback">{errors.password.message}</div>
+            <div className="invalid-feedback">Invalid</div>
           )}
         </div>
 
