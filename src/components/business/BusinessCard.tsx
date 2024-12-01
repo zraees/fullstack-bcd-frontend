@@ -32,18 +32,18 @@ const BusinessCard: React.FC<IBusinessCardProps> = ({
       />
       <div className="card-body">
         <p className="card-text">
-          <b>{business.name}</b>
-          <br />
+
+        <div className="d-flex justify-content-between align-items-center">
+        <b>{business.name} | {business.category.name}</b>
+          <small className="text-body-secondary">{business.city.cityName}</small>
+        </div>
           {business.description}
         </p>
         <div className="d-flex justify-content-between align-items-center">
           <div className="btn-group">
             <button type="button" className="btn btn-sm btn-outline-secondary">
               <SlLocationPin /> {business.address}
-              {/* {business?.category?.name??"category"} */}
             </button>
-            {/* <button type="button" className="btn btn-sm btn-outline-secondary">
-            </button> */}
           </div>
           <small className="text-body-secondary">{distInKm}</small>
         </div>

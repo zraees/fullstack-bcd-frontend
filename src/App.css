@@ -137,6 +137,37 @@ ul.categories>li.categories a.cateoryLink span {
   text-align: center; /* Centers text inside the toast */
 }
 
+.title {
+  font-size: 3rem; /* Adjust size based on preference */
+  font-weight: bold;
+  color: #fff; /* White color for contrast */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Subtle shadow for clarity */
+  text-align: center;
+  margin-top: 20px; /* Adjust spacing if needed */
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Slightly off-white */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.status-message {
+  font-size: 1.5rem;
+  color: #f0f0f0; /* Cyan color for a modern look */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 30px; /* Adjust spacing based on placement */
+  animation: fade-in-out 2s infinite; /* Subtle animation for visibility */
+}
+
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
 /*
 Soft Neutrals (Light Gray or Off-White)
 

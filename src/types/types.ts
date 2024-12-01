@@ -123,3 +123,9 @@ export interface ICategoryProp {
   value: number,
   onChange: (e: number) => void;
 }
+
+export interface ISearchCriteria {
+  searchText: string, 
+  cityId: number, 
+  categoryId: number
+}

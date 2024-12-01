@@ -10,11 +10,17 @@ export const Index = () => {
   const INITIAL: IBusiness[] = [];
   const [businessData, setBusinessData] = useState(INITIAL);
   const navigate = useNavigate();
+  const [searchData, setSearchData] = useState({
+    categoryId: 0,
+    cityId: 4,
+    searchText: "",
+  });
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
-        const res: IBusiness[] = await BusinessService.getBusinesses();
+        const res: IBusiness[] = await BusinessService.getBusinessesByCriteria(searchData);
         setBusinessData(Array.isArray(res) ? res : INITIAL);
         //console.log('data',res);
       } catch (err) {
@@ -24,7 +30,13 @@ export const Index = () => {
     };
 
     fetchData();
-  }, []);
+  
+  }, [searchData]);
+
+  const handleSearch = (searchText: string, cityId: number, categoryId: number) => {
+    //console.log('text, cityId, categoryId',text, cityId, categoryId);
+    setSearchData({searchText, cityId, categoryId});
+  }
 
   const redirectToDetail = (business: IBusiness) => {
     //console.log('businessId', business.businessId);
@@ -33,7 +45,7 @@ export const Index = () => {
 
   return (
     <main className="business-bg">
-      <SearchCriteria />
+      <SearchCriteria onSearch={(text, cityId, categoryId)=> handleSearch(text, cityId, categoryId)} />
 
       {businessData?.length <= 0 && <Loading />}
 

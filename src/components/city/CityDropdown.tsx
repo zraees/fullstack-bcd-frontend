@@ -29,7 +29,7 @@ const CityDropdown: React.FC<ICityProp> = ({ value, onChange }) => {
         id="cityID"
         required
       >
-        <option value="">Select City</option>
+        <option value="0">Select City</option>
         {cities.map((city) => (
           <option key={city.cityId} value={city.cityId}>
             {city.cityName}

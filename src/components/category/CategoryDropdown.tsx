@@ -28,7 +28,7 @@ const CategoryDropdown: React.FC<ICategoryProp> = ({ value, onChange }) => {
         id="categoryId"
         required
       >
-        <option value="">Select Category</option>
+        <option value="0">Select Category</option>
         {categories.map((category) => (
           <option key={category.categoryId} value={category.categoryId}>
             {category.name}
