@@ -1,6 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import { IBusiness } from "../types/types";
 const backendUrl = import.meta.env.VITE_BCD_BACKEND_URL + "Businesses";
+
+import axios from '../core/AxiosIntance';
 
 const BusinessService = {
 
@@ -32,6 +34,21 @@ const BusinessService = {
         return resp.data;
     },
 
+    markAsFeatured: async (businessId: number) => {
+        try {
+            await axios.put(`${backendUrl}/MarkAsFeatured/${businessId}`);
+        } catch (error: any) {
+            console.error('markAsFeatured', error);
+        }
+    },
+
+    deleteBusiness: async (businessId: number) => {
+        try {
+            await axios.delete(`${backendUrl}/Delete/${businessId}`);
+        } catch (error: any) {
+            console.error('deleteBusiness', error);
+        }
+    }
 }
 
 export default BusinessService;

@@ -56,29 +56,31 @@ const Create = () => {
       );
       Array.from(images).forEach((file) => formData.append("images", file));
 
-      console.log("data", formData);
+      //console.log("data", formData);
 
-      BusinessService.add(formData);
+      BusinessService.add(formData)
+        .then((e) => {
+          setShowToast(true);
 
-      setShowToast(true);
-      //   alert("Business saved successfully!");
-      //   setBusinessData({
-      //     name: "",
-      //     description: "",
-      //     address: "",
-      //     phoneNumber: "",
-      //     email: "",
-      //     website: "",
-      //     hoursOfOperation: "",
-      //     categoryId: 0,
-      //     ownerId: "",
-      //     isFeatured: false,
-      //     latitude: "",
-      //     longitude: "",
-      //     postalCode: "",
-      //     cityID: 0,
-      //   });
-      //   setImages([]);
+          setBusinessData({
+            name: "",
+            description: "",
+            address: "",
+            phoneNumber: "",
+            email: "",
+            website: "",
+            hoursOfOperation: "",
+            categoryId: 0,
+            ownerId: "",
+            isFeatured: false,
+            latitude: "",
+            longitude: "",
+            postalCode: "",
+            cityID: 0,
+          });
+          setImages([]);
+        })
+        .catch((e) => console.log("err", e));
     } catch (error) {
       console.error(error);
       alert("Error saving business");
