@@ -1,6 +1,8 @@
 import { Carousel } from "react-bootstrap";
 import { IBusinessPhotoProp } from "../../types/types";
 
+const baseImgUrl = import.meta.env.VITE_BCD_BASEIMAGE_URL;
+
 const CustomCarousel: React.FC<IBusinessPhotoProp> = ({ businessPhotos }) => {
   //console.log("businessPhotos", businessPhotos);
   return (
@@ -8,12 +10,12 @@ const CustomCarousel: React.FC<IBusinessPhotoProp> = ({ businessPhotos }) => {
       {businessPhotos?.length > 0 ? businessPhotos?.map((photo, index) => {
         return (
           <Carousel.Item key={index}>
-            <img src={`/images/business/${photo.url}`} className="business-img-rounded" />
+            <img src={photo.url} className="business-img-rounded" />
           </Carousel.Item>
         ) 
       }) : 
       <Carousel.Item>
-        <img src={`/images/business/default-3.avif`} className="business-img-rounded" />
+        <img src={`${baseImgUrl}default-3.avif`} className="business-img-rounded" />
       </Carousel.Item>}
 
       {/* <Carousel.Item>

@@ -130,6 +130,12 @@ ul.categories>li.categories a.cateoryLink span {
   }
   
 }
+.custom-toast {
+  margin: auto !important; /* Centers horizontally */
+  top: 50% !important; /* Adjusts for vertical centering */
+  transform: translateY(-50%); /* Centers vertically */
+  text-align: center; /* Centers text inside the toast */
+}
 
 /*
 Soft Neutrals (Light Gray or Off-White)

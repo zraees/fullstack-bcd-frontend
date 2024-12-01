@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import CityDropdown from "../../components/city/CityDropdown";
 import CategoryDropdown from "../../components/category/CategoryDropdown";
+import BusinessService from "../../services/business-service";
+import CustomToast from "../../components/shared/CustomToast";
 
 const Create = () => {
   const [businessData, setBusinessData] = useState({
@@ -22,6 +24,7 @@ const Create = () => {
   });
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -48,33 +51,34 @@ const Create = () => {
     setLoading(true);
     try {
       const formData = new FormData();
-      Object.keys(businessData).forEach((key) => formData.append(key, businessData[key]));
+      Object.keys(businessData).forEach((key) =>
+        formData.append(key, businessData[key])
+      );
       Array.from(images).forEach((file) => formData.append("images", file));
 
-console.log('data', formData);
+      console.log("data", formData);
 
-    //   await axios.post("/api/businesss", formData, {
-    //     headers: { "Content-Type": "multipart/form-data" },
-    //   });
+      BusinessService.add(formData);
 
-    //   alert("Business saved successfully!");
-    //   setBusinessData({
-    //     name: "",
-    //     description: "",
-    //     address: "",
-    //     phoneNumber: "",
-    //     email: "",
-    //     website: "",
-    //     hoursOfOperation: "",
-    //     categoryId: 0,
-    //     ownerId: "",
-    //     isFeatured: false,
-    //     latitude: "",
-    //     longitude: "",
-    //     postalCode: "",
-    //     cityID: 0,
-    //   });
-    //   setImages([]);
+      setShowToast(true);
+      //   alert("Business saved successfully!");
+      //   setBusinessData({
+      //     name: "",
+      //     description: "",
+      //     address: "",
+      //     phoneNumber: "",
+      //     email: "",
+      //     website: "",
+      //     hoursOfOperation: "",
+      //     categoryId: 0,
+      //     ownerId: "",
+      //     isFeatured: false,
+      //     latitude: "",
+      //     longitude: "",
+      //     postalCode: "",
+      //     cityID: 0,
+      //   });
+      //   setImages([]);
     } catch (error) {
       console.error(error);
       alert("Error saving business");
@@ -104,8 +108,19 @@ console.log('data', formData);
           />
         </div>
 
-        {/* Description */}
+        {/* Category */}
         <div className="col-md-6">
+          <label htmlFor="categoryId" className="form-label">
+            Category
+          </label>
+          <CategoryDropdown
+            value={businessData.categoryId}
+            onChange={handleCategoryChange}
+          />
+        </div>
+
+        {/* Description */}
+        <div className="col-md-12">
           <label htmlFor="description" className="form-label">
             Description
           </label>
@@ -192,18 +207,19 @@ console.log('data', formData);
           <label htmlFor="hoursOfOperation" className="form-label">
             Hours of Operation
           </label>
-          <textarea
+          <input
+            type="text"
             className="form-control"
             id="hoursOfOperation"
             name="hoursOfOperation"
-            placeholder="Enter hours of operation as JSON"
+            placeholder="Enter hours of operation"
             value={businessData.hoursOfOperation}
             onChange={handleChange}
-          ></textarea>
+          ></input>
         </div>
 
         {/* Latitude */}
-        <div className="col-md-4">
+        <div className="col-md-6">
           <label htmlFor="latitude" className="form-label">
             Latitude
           </label>
@@ -220,7 +236,7 @@ console.log('data', formData);
         </div>
 
         {/* Longitude */}
-        <div className="col-md-4">
+        <div className="col-md-6">
           <label htmlFor="longitude" className="form-label">
             Longitude
           </label>
@@ -236,8 +252,18 @@ console.log('data', formData);
           />
         </div>
 
+        {/* City */}
+        <div className="col-md-6">
+          <label htmlFor="cityID" className="form-label">
+            City
+          </label>
+          <CityDropdown
+            value={businessData.cityID}
+            onChange={handleCityChange}
+          />
+        </div>
         {/* Postal Code */}
-        <div className="col-md-4">
+        <div className="col-md-6">
           <label htmlFor="postalCode" className="form-label">
             Postal Code
           </label>
@@ -250,22 +276,6 @@ console.log('data', formData);
             value={businessData.postalCode}
             onChange={handleChange}
           />
-        </div>
-
-        {/* City */}
-        <div className="col-md-6">
-          <label htmlFor="cityID" className="form-label">
-            City
-          </label>
-          <CityDropdown value={businessData.cityID} onChange={handleCityChange} />
-        </div>
-
-        {/* Category */}
-        <div className="col-md-6">
-          <label htmlFor="categoryId" className="form-label">
-            Category
-          </label>
-          <CategoryDropdown value={businessData.categoryId} onChange={handleCategoryChange} />
         </div>
 
         {/* Images */}
@@ -290,6 +300,12 @@ console.log('data', formData);
           </button>
         </div>
       </form>
+      <CustomToast
+        show={showToast}
+        title="Success"
+        onClose={() => setShowToast(false)}
+        message="Business has been successfully saved!"
+      />
     </div>
   );
 };

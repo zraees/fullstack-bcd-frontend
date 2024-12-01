@@ -8,7 +8,8 @@ const CustomToast: React.FC<IToastProps> = ({
   message,
 }) => {
   return (
-    <ToastContainer position="top-end">
+    <ToastContainer position="top-center"
+                className="custom-toast">
       <Toast show={show} onClose={onClose} delay={3000} autohide>
         <Toast.Header>
           <strong className="me-auto">{title}</strong>

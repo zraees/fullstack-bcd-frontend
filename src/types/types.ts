@@ -16,6 +16,8 @@ export interface IBusiness {
   ownerId: number;
   businessPhotos: IBusinessPhoto[];
   businessReviews: IBusinessReview[];
+
+  images: any[]; // post
 }
 
 export interface ICity {

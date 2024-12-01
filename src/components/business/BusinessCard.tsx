@@ -3,11 +3,13 @@ import { getUserLocationAndCalculateDistance } from "../../services/location-ser
 import { IBusinessCardProps } from "../../types/types";
 import { SlLocationPin } from "react-icons/sl";
 
+const baseImgUrl = import.meta.env.VITE_BCD_BASEIMAGE_URL;
+
 const BusinessCard: React.FC<IBusinessCardProps> = ({
   business,
   redirectToDetail,
 }) => {
-  const imgUrl = business?.businessPhotos[0]?.url ?? "default-3.avif";
+  const imgUrl = business?.businessPhotos[0]?.url ?? `${baseImgUrl}default-3.avif`;
   const [distInKm, setDistInKm] = useState("");
 
   getUserLocationAndCalculateDistance(
@@ -26,7 +28,7 @@ const BusinessCard: React.FC<IBusinessCardProps> = ({
         height="225"
         role="img"
         aria-label="Placeholder: Thumbnail"
-        src={`/images/business/${imgUrl}`}
+        src={imgUrl}
       />
       <div className="card-body">
         <p className="card-text">
